@@ -1,0 +1,31 @@
+:root {
+  --background-color: #eaeaea;
+  --separator: linear-gradient(
+    65deg,
+    #ffef26,
+    #fec800,
+    #f19135,
+    #e85e31,
+    #e3312d
+  );
+
+  --main-bg: #eaeaea;
+  --widget-bg: #fff;
+  --bg-white: #fff;
+  --color-title: #212121;
+  --color-text: #212121;
+  --color-footer-title: #e3312d;
+  --color-link: #212121;
+  --color-link-hover: #e3312d;
+  --color-header: #fff;
+  --color-header-footer-border: #e2e1e1;
+  --color-border: #eaeaea;
+  --color-display-border: #fff;
+  --display-h3: #fff;
+  --plyr-audio-controls-background: #fff;
+} /* :root light/default */
+
+footer {
+  min-height: 375px;
+  background-image: url("/images/bg_footer-light.jpg");
+}

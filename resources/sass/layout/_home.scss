@@ -1,0 +1,55 @@
+.widget {
+  h3 {
+    font-size: 24px;
+    font-family: "Karla", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: var(--widget-bg);
+  }
+
+  img {
+    width: 105px;
+    height: 105px;
+    border-radius: 15px;
+  }
+
+  .song_title {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+  .displayShows {
+    background-size: cover;
+    padding: 10px 10px 10px 20px;
+    font-family: Karla, sans-serif;
+
+    h3 {
+      font-size: 24px;
+      font-family: "Karla", sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+   
+    }
+    .description {
+      padding: 10px;
+    }
+  }
+
+  .events {
+    width: 100%;
+    height: 150px;
+    font-family: Karla, sans-serif;
+  }
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent; /* Fond initial du menu */
+    transition: background-color 0.5s ease; /* Animation de transition */
+}
+
+.fade-in {
+    background-color: rgba(255, 255, 255, 0.9); /* Fond qui apparaît en fondu au scroll */
+}

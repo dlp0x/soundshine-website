@@ -1,0 +1,674 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: rewindRadio v0.01\n"
+"POT-Creation-Date: 2023-03-27 23:12-0400\n"
+"PO-Revision-Date: 2023-03-28 00:32-0400\n"
+"Last-Translator: \n"
+"Language-Team: Noorda Studios\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-SearchPath-0: app/classes\n"
+"X-Poedit-SearchPath-1: .\n"
+
+#: app/classes/Admin.php:120
+msgid "Page"
+msgstr ""
+
+#: app/classes/Admin.php:122
+msgid "Article"
+msgstr ""
+
+#: app/classes/Admin.php:135
+msgid "Categories"
+msgstr ""
+
+#: app/classes/Admin.php:136
+msgid "Tags"
+msgstr ""
+
+#: app/classes/Admin.php:137
+msgid "Actions"
+msgstr ""
+
+#: app/classes/Admin.php:141
+msgid "Nothing to show."
+msgstr ""
+
+#: app/classes/Posts.php:42 app/classes/Posts.php:86
+msgid "Posted by"
+msgstr ""
+
+#: app/classes/Songs.php:48
+msgid "No songs played."
+msgstr ""
+
+#: app/classes/Songs.php:100 app/classes/Songs.php:144
+#: app/classes/Songs.php:181 app/classes/Songs.php:220
+#: app/classes/Songs.php:273 resources/views/profile.php:118
+msgid "Nothing found."
+msgstr ""
+
+#: app/classes/Songs.php:134
+msgid "Asked by"
+msgstr ""
+
+#: app/classes/Songs.php:135
+msgid "Asked at"
+msgstr ""
+
+#: app/classes/Songs.php:174
+msgid "Add to my calendar"
+msgstr ""
+
+#: app/classes/Songs.php:210
+msgid "More informations"
+msgstr ""
+
+#: app/classes/Songs.php:212
+msgid "Subscribe to this podcast"
+msgstr ""
+
+#: app/classes/StaticContent.php:88
+msgid "Installation de rewindRadio"
+msgstr ""
+
+#: app/classes/StaticContent.php:90
+msgid "Installation non-terminée."
+msgstr ""
+
+#: app/classes/StaticContent.php:91
+msgid ""
+"Désolé, il semble que vous n'ayez pas completé le processus d'installation "
+"du script. Pour continuer, veuillez suivre les instructions d'installation "
+"disponibles en cliquant sur le bouton ci-bas. Si vous rencontrez des "
+"problèmes lors de l'installation ou l'utilisation du script, n'hésitez pas à "
+"visiter <a href='https://github.com/noordotda/rewindRadio'>la section "
+"issues</a> pour obtenir de l'aide."
+msgstr ""
+
+#: app/classes/StaticContent.php:93
+msgid "Démarrer l'installation"
+msgstr ""
+
+#: app/classes/StaticContent.php:95
+msgid "Installation not completed"
+msgstr ""
+
+#: app/classes/StaticContent.php:96
+msgid ""
+"Sorry, it seems that you have not complete the installation process. To "
+"proceed, please follow the installation instructions available by cliking on "
+"the button below. If you experience any issues while installing or using the "
+"script, please don't hesitate to visit <a href='https://github.com/noordotda/"
+"rewindRadio'>the Github page</a>."
+msgstr ""
+
+#: app/classes/StaticContent.php:97
+msgid "Start Installation"
+msgstr ""
+
+#: app/classes/User.php:26
+msgid "Articles"
+msgstr ""
+
+#: app/classes/User.php:27
+msgid "Write an article"
+msgstr ""
+
+#: app/classes/User.php:28
+msgid "Add a draft"
+msgstr ""
+
+#: app/classes/User.php:29
+msgid "View my drafts"
+msgstr ""
+
+#: app/classes/User.php:31
+msgid "Add a user"
+msgstr ""
+
+#: app/classes/User.php:32
+msgid "View userlist"
+msgstr ""
+
+#: app/classes/User.php:34
+msgid "View profile"
+msgstr ""
+
+#: app/classes/User.php:35 resources/views/layout/header.php:30
+msgid "Settings"
+msgstr ""
+
+#: app/classes/User.php:36
+msgid "Logout"
+msgstr ""
+
+#: app/helpers/Texter.php:30
+msgid "monday"
+msgstr ""
+
+#: app/helpers/Texter.php:30
+msgid "tuesday"
+msgstr ""
+
+#: app/helpers/Texter.php:30
+msgid "wednesday"
+msgstr ""
+
+#: app/helpers/Texter.php:30
+msgid "thursday"
+msgstr ""
+
+#: app/helpers/Texter.php:30
+msgid "friday"
+msgstr ""
+
+#: app/helpers/Texter.php:30
+msgid "saturday"
+msgstr ""
+
+#: app/helpers/Texter.php:30
+msgid "sunday"
+msgstr ""
+
+#: databases/fill.php:29 public/setup/index.php:25
+msgid "rewindRadio Installation"
+msgstr ""
+
+#: databases/fill.php:37
+msgid "RewindRadio script Installation process"
+msgstr ""
+
+#: databases/fill.php:63 databases/fill.php:100
+msgid "Connected to the database.<br>"
+msgstr ""
+
+#: databases/fill.php:81
+msgid "Fake data deleted from the database."
+msgstr ""
+
+#: databases/fill.php:92
+msgid "Database created."
+msgstr ""
+
+#: databases/fill.php:94
+msgid "The database already exists."
+msgstr ""
+
+#: databases/fill.php:106
+msgid ""
+"The subcategory table doesn't exists. Please install RadioDJ before "
+"executing this setup.<br>"
+msgstr ""
+
+#: databases/fill.php:109
+msgid "The subcategory table exists. Please proceed.<br>"
+msgstr ""
+
+#: databases/fill.php:114
+msgid ""
+"The events table doesn't exists. Please install RadioDJ before executing "
+"this setup.<br>"
+msgstr ""
+
+#: databases/fill.php:117
+msgid "The events table exists. Please proceed.<br>"
+msgstr ""
+
+#: databases/fill.php:146
+msgid "Created the subcategory_info table.<br>"
+msgstr ""
+
+#: databases/fill.php:148
+msgid "The subcategory_info table already exists.<br>"
+msgstr ""
+
+#: databases/fill.php:165
+msgid "Created the events_info table.<br>"
+msgstr ""
+
+#: databases/fill.php:171
+msgid ""
+"Alter the events table for detecting the fake events created with this "
+"script.<br>We will remove it when you delete the fake content.<br>"
+msgstr ""
+
+#: databases/fill.php:184
+msgid "Created the likes table.<br>"
+msgstr ""
+
+#: databases/fill.php:215
+msgid ""
+"Created the new users table. We did a new table to not mess with radioDJ "
+"tables. <br>"
+msgstr ""
+
+#: databases/fill.php:224
+msgid "Created the user_level table. <br>"
+msgstr ""
+
+#: databases/fill.php:237
+msgid "Insert the user levels . <br>"
+msgstr ""
+
+#: databases/fill.php:245
+msgid "Created the capabilities table. <br>"
+msgstr ""
+
+#: databases/fill.php:271
+msgid "Inserted the capabilities. <br>"
+msgstr ""
+
+#: databases/fill.php:281
+msgid "Created the categories table.<br>"
+msgstr ""
+
+#: databases/fill.php:291
+msgid "Created the tags table.<br>"
+msgstr ""
+
+#: databases/fill.php:313
+msgid "Created the posts table.<br>"
+msgstr ""
+
+#: databases/fill.php:325
+msgid "Created the post_categories table.<br>"
+msgstr ""
+
+#: databases/fill.php:337
+msgid "Created the post_tags table.<br>"
+msgstr ""
+
+#: databases/fill.php:352
+msgid "Added fake data to the subcategory_info table.<br>"
+msgstr ""
+
+#: databases/fill.php:358
+msgid "Added a category for the website events.<br>"
+msgstr ""
+
+#: databases/fill.php:376
+msgid "Added fake data to the events_info table.<br>"
+msgstr ""
+
+#: databases/fill.php:407
+msgid "Added fake data to the post table.<br>"
+msgstr ""
+
+#: databases/fill.php:420
+msgid ""
+"Added fake data to the prefix_users table. Don't worry, it won't mess with "
+"rdj users table.<br>"
+msgstr ""
+
+#: databases/fill.php:424
+msgid "Added fake data to the categories table.<br>"
+msgstr ""
+
+#: databases/fill.php:437
+msgid "Created the insert_subcategory_info trigger.<br>"
+msgstr ""
+
+#: databases/fill.php:445
+msgid "Created the insert_events_info trigger.<br>"
+msgstr ""
+
+#: databases/fill.php:460
+msgid ""
+"Setup completed successfully!</pre>\n"
+"    <a href='/'><button class='btn btn-dark'>Go to your website</button></a>"
+msgstr ""
+
+#: public/setup/index.php:31
+msgid ""
+"This is the alpha version version fo the script. Go to <a href='https://"
+"github.com/noordotda/rewindRadio' target='_blank'>Github page</a> to stay up-"
+"to-date."
+msgstr ""
+
+#: public/setup/index.php:39
+msgid "RewindRadio script Installation process, Part 1"
+msgstr ""
+
+#: public/setup/index.php:44
+msgid "Please add your database information below."
+msgstr ""
+
+#: public/setup/index.php:48
+msgid "Hostname:"
+msgstr ""
+
+#: public/setup/index.php:50
+msgid "Please enter your MySQL hostname."
+msgstr ""
+
+#: public/setup/index.php:54
+msgid "Username:"
+msgstr ""
+
+#: public/setup/index.php:56
+msgid ""
+"Please enter your MySQL username. Do not use the root user. Create a new "
+"user for the script."
+msgstr ""
+
+#: public/setup/index.php:61 public/setup/index.php:112
+msgid "Password"
+msgstr ""
+
+#: public/setup/index.php:63
+msgid "Please enter your MySQL password."
+msgstr ""
+
+#: public/setup/index.php:68
+msgid "Database name"
+msgstr ""
+
+#: public/setup/index.php:70
+msgid "Please enter your MySQL database name."
+msgstr ""
+
+#: public/setup/index.php:74
+msgid "Choosen Prefix"
+msgstr ""
+
+#: public/setup/index.php:76
+msgid ""
+"An underscore '_' will be added to the end of your prefix, for example, "
+"prefix_tablename, to make it easier to find tables in case of bugs."
+msgstr ""
+
+#: public/setup/index.php:83
+msgid "Add Fake Data?"
+msgstr ""
+
+#: public/setup/index.php:84
+msgid "Please check this box if you want to add fake data."
+msgstr ""
+
+#: public/setup/index.php:92
+msgid "RewindRadio script Installation process, Part 2"
+msgstr ""
+
+#: public/setup/index.php:99
+msgid "Website Name"
+msgstr ""
+
+#: public/setup/index.php:101
+msgid "Please enter the name of your website."
+msgstr ""
+
+#: public/setup/index.php:105
+msgid "Username"
+msgstr ""
+
+#: public/setup/index.php:107
+msgid ""
+"Please enter a username. It will be used to log in to the private section of "
+"the website."
+msgstr ""
+
+#: public/setup/index.php:114
+msgid ""
+"Please enter your password. It will be used to log in to the private section "
+"of the website."
+msgstr ""
+
+#: public/setup/index.php:119
+msgid "Email adress"
+msgstr ""
+
+#: public/setup/index.php:121
+msgid ""
+"Please enter your email address here. It will be used to change your "
+"password and activate your account."
+msgstr ""
+
+#: public/setup/index.php:125
+msgid "Install plugin"
+msgstr ""
+
+#: resources/views/charts.php:9 resources/views/layout/header.php:45
+msgid "Charts"
+msgstr ""
+
+#: resources/views/charts.php:22
+msgid "Position"
+msgstr ""
+
+#: resources/views/charts.php:23
+msgid "Title"
+msgstr ""
+
+#: resources/views/charts.php:24
+msgid "Artists"
+msgstr ""
+
+#: resources/views/home.php:13
+msgid "news/blogs"
+msgstr ""
+
+#: resources/views/home.php:17
+msgid "Last played songs"
+msgstr ""
+
+#: resources/views/home.php:21
+msgid "Top Charts"
+msgstr ""
+
+#: resources/views/home.php:27
+msgid "Requests"
+msgstr ""
+
+#: resources/views/home.php:31
+msgid "Shows Live"
+msgstr ""
+
+#: resources/views/home.php:35
+msgid "Events"
+msgstr ""
+
+#: resources/views/layout/footer.php:12
+msgid "Mobile Apps"
+msgstr ""
+
+#: resources/views/layout/footer.php:13
+msgid "Download SimpleRadio app to listen to rewindRadio."
+msgstr ""
+
+#: resources/views/layout/footer.php:18
+msgid "Require iOS 9.0 ou better or Android 4.1 or better."
+msgstr ""
+
+#: resources/views/layout/footer.php:25 resources/views/layout/modals.php:6
+msgid "About"
+msgstr ""
+
+#: resources/views/layout/footer.php:26
+msgid "Merch"
+msgstr ""
+
+#: resources/views/layout/footer.php:27
+msgid "Team"
+msgstr ""
+
+#: resources/views/layout/footer.php:28
+msgid "Volunteering"
+msgstr ""
+
+#: resources/views/layout/footer.php:29
+msgid "Privacy Policy"
+msgstr ""
+
+#: resources/views/layout/footer.php:36
+msgid "Our webradios"
+msgstr ""
+
+#: resources/views/layout/header.php:28
+msgid "Add an article"
+msgstr ""
+
+#: resources/views/layout/header.php:29
+msgid "Add a utilisateur"
+msgstr ""
+
+#: resources/views/layout/header.php:31
+msgid "View my profile"
+msgstr ""
+
+#: resources/views/layout/header.php:44
+msgid "Home"
+msgstr ""
+
+#: resources/views/layout/header.php:46
+msgid "Schedule"
+msgstr ""
+
+#: resources/views/layout/header.php:47
+msgid "Magazine"
+msgstr ""
+
+#: resources/views/layout/header.php:50
+msgid "Open the radio"
+msgstr ""
+
+#: resources/views/layout/modals.php:11
+msgid "This the about us text."
+msgstr ""
+
+#: resources/views/layout/shortcodes_modals.php:69
+msgid "Shortcode List"
+msgstr ""
+
+#: resources/views/layout/shortcodes_modals.php:74
+msgid "Add an image shortcode"
+msgstr ""
+
+#: resources/views/layout/shortcodes_modals.php:77
+msgid "Add an image gallery shortcode"
+msgstr ""
+
+#: resources/views/layout/shortcodes_modals.php:80
+msgid "Add a caption shortcode"
+msgstr ""
+
+#: resources/views/layout/shortcodes_modals.php:83
+msgid "Add a Youtube video shortcode"
+msgstr ""
+
+#: resources/views/layout/shortcodes_modals.php:86
+msgid "Add an quote shortcode"
+msgstr ""
+
+#: resources/views/profile.php:32
+msgid "Message me on discord"
+msgstr ""
+
+#: resources/views/profile.php:40
+msgid "Website:"
+msgstr ""
+
+#: resources/views/profile.php:44
+msgid "Github:"
+msgstr ""
+
+#: resources/views/profile.php:48
+msgid "Twitter:"
+msgstr ""
+
+#: resources/views/profile.php:52
+msgid "Instagram:"
+msgstr ""
+
+#: resources/views/profile.php:56
+msgid "Linkedin:"
+msgstr ""
+
+#: resources/views/profile.php:64
+msgid "About the DJ"
+msgstr ""
+
+#: resources/views/profile.php:68
+msgid "Name"
+msgstr ""
+
+#: resources/views/profile.php:77
+msgid "Email address"
+msgstr ""
+
+#: resources/views/profile.php:89
+msgid "Published Articles"
+msgstr ""
+
+#: resources/views/schedule.php:7
+msgid "Horaire"
+msgstr ""
+
+#: resources/views/schedule.php:22
+msgid "Monday"
+msgstr ""
+
+#: resources/views/schedule.php:23 resources/views/schedule.php:25
+msgid "Tuesday"
+msgstr ""
+
+#: resources/views/schedule.php:24
+msgid "Wednesday"
+msgstr ""
+
+#: resources/views/schedule.php:26
+msgid "Friday"
+msgstr ""
+
+#: resources/views/schedule.php:27
+msgid "Samedi"
+msgstr ""
+
+#: resources/views/schedule.php:27
+msgid "Saturday"
+msgstr ""
+
+#: resources/views/schedule.php:28
+msgid "Dimanche"
+msgstr ""
+
+#: resources/views/schedule.php:28
+msgid "Sunday"
+msgstr ""
+
+#: resources/views/single_show.php:24
+msgid "Support this show"
+msgstr ""
+
+#: resources/views/single_show.php:25
+msgid "Join the Discord chat"
+msgstr ""
+
+#: resources/views/single_show.php:63
+msgid "No guest.s for this show."
+msgstr ""
+
+#: resources/views/single_show.php:76
+msgid "No episodes for this show."
+msgstr ""
+
+#: resources/views/single_show.php:95
+msgid "Next episode:"
+msgstr ""
+
+#: resources/views/single_show.php:96
+msgid "Hosted by:"
+msgstr ""
+
+#: resources/views/single_show.php:97
+msgid "All"
+msgstr ""
+
+#: resources/views/single_show.php:100
+msgid "No longer online."
+msgstr ""
