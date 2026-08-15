@@ -1,6 +1,6 @@
 <?php
 
-use App\Classes\Database;
+use App\Classes\ApiClient;
 ?>
 
 <section>
@@ -28,12 +28,16 @@ use App\Classes\Database;
                                     <tbody>
 
                                         <?php
-                                        $db = new Database();
-                                        $db_conx_rdj = $db->connect();
-                                        $reponse = $db_conx_rdj->query('SELECT * FROM songs WHERE song_type = 0 AND id_subcat != 18 AND id_subcat != 19 AND id_subcat != 5 AND enabled = 1 ORDER BY count_played DESC LIMIT 40');
-                                        if ($reponse->rowCount() > 0) {
+                                        // Previously: "song_type = 0 AND id_subcat != 18/19/5", a site-specific
+                                        // exclusion list. The API's /top-tracks endpoint instead uses the
+                                        // canonical "requestable" subcategory allow-list (30, 35, 38, 39, 40)
+                                        // shared with the Discord bot. Documented as an intentional behavior
+                                        // change; verify chart coverage still matches expectations.
+                                        $data = ApiClient::get('/top-tracks', ['limit' => 40]);
+                                        $tracks = $data['topTracks'] ?? null;
+                                        if ($tracks !== null && count($tracks) > 0) {
                                             $i = 1;
-                                            while ($donnees = $reponse->fetch()) {
+                                            foreach ($tracks as $donnees) {
                                         ?>
                                                 <tr>
                                                     <td><?= $i++; ?></td>
@@ -44,7 +48,6 @@ use App\Classes\Database;
 
                                         <?php
                                             }
-                                            $reponse->closeCursor(); // Termine le traitement de la requête
                                         }
                                         ?>
                                     </tbody>
