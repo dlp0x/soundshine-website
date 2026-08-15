@@ -2,19 +2,21 @@
 
 namespace App\Classes;
 
-use App\Classes\Database;
-
 class Team
 {
   public static function displayTeam()
   {
     global $router;
-    $db = new Database();
-    $db_conx_rdj = $db->connect();
 
-    $query = "SELECT * FROM " . PREFIX . "_users";
-    $result = $db_conx_rdj->query($query);
-    while ($row = $result->fetch()) {
+    $data = ApiClient::get('/team');
+    $team = $data['team'] ?? null;
+
+    if ($team === null || count($team) === 0) {
+      ApiClient::emptyWidget();
+      return;
+    }
+
+    foreach ($team as $row) {
       $id = $row['id']; ?>
       <!-- Team item-->
       <div class="col-xl-3 col-sm-6 mb-5">

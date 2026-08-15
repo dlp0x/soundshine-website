@@ -1,21 +1,22 @@
 <?php
 
-use App\Classes\Database;
+use App\Classes\ApiClient;
 use App\Helpers\DateFormater;
 use App\Helpers\Texter;
 
 ?>
 <section>
   <?php
-  $id = $match['params']['id'];
-  $db = new Database();
-  $db_conx_rdj = $db->connect();
-  $reponse = $db_conx_rdj->query("SELECT " . PREFIX . "_subcategory_info.*, subcategory.* 
-FROM " . PREFIX . "_subcategory_info 
-LEFT JOIN subcategory ON subcategory.ID = " . PREFIX . "_subcategory_info.subcategory_id 
-WHERE subcategory_id = " . $id . " LIMIT 1");
-  while ($show = $reponse->fetch()) {
+  $id = (int) $match['params']['id'];
+  $data = ApiClient::get('/shows/' . $id);
+  $show = $data['show'] ?? null;
+  $episodes = $data['episodes'] ?? [];
   ?>
+  <?php if ($show === null): ?>
+    <div class="container">
+      <p><?= _('Nothing found.'); ?></p>
+    </div>
+  <?php else: ?>
     <div class="px-4 py-5 mb-4 text-center" style="background-image: url('../uploads/shows/<?= $show['image']; ?>'); background-size:cover; background-repeat:no-repeat;">
       <h1 class="display-5 fw-bold text-white"><?php echo $show['name']; ?></h1>
       <div class="col-lg-6 mx-auto">
@@ -26,86 +27,54 @@ WHERE subcategory_id = " . $id . " LIMIT 1");
         </div>
       </div>
     </div>
-  <?php }
-  $reponse->closeCursor(); ?>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8">
-        <h3 class="widgetTitle"><?= _("Last episodes"); ?></h3>
-        <?php
-        $reponse = $db_conx_rdj->query("SELECT songs.title, songs.artist, songs.associated_artists, songs.path, " . PREFIX . "_subcategory_info.image
-FROM songs
-LEFT JOIN " . PREFIX . "_subcategory_info ON " . PREFIX . "_subcategory_info.subcategory_id = songs.id_subcat
-WHERE id_subcat = " . $id . " ORDER BY title DESC LIMIT 20;");
-        if ($reponse->rowCount() > 0) {
-          while ($show = $reponse->fetch()) {
-            $accents = ["&", "è"];
-            $lettre = ["&amp", "e"];
-            $showArtist = str_replace($accents, $lettre, (string) $show['artist']);
-            $showTrack = str_replace($accents, $lettre, (string) $show['title']);
-
-            // N'oubliez pas d'uploader vos fichiers mp3 sur votre serveur web!  
-            $path = $show['path'];
-            $getStreamURL = str_replace(LOCAL_PODCASTS_FOLDER, REMOTE_PODCASTS_FOLDER, (string) $path);
-        ?>
-            <div class="card mb-3" style="max-width: 100%">
-              <div class="row g-0">
-                <div class="col-md-3">
-                  <img src="../uploads/shows/<?php echo $show['image']; ?>" class="img-fluid rounded-start" alt="..." width="200" height="200">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title"><?php Texter::cutText($showTrack, 30); ?></h5>
-                    <p class="card-text">
-                      <?php if (!empty($show['associated_artists'])) {
-                        echo "Invité.e.s: " . $show['associated_artists'] . "";
-                      } else {
-                        echo _("No guest.s for this show.");
-                      } ?></p>
-                    <audio class="js-player">
-                      <source src="<?= $getStreamURL; ?>" />
-                    </audio>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <h3 class="widgetTitle"><?= _("Last episodes"); ?></h3>
+          <?php if (count($episodes) > 0): ?>
+            <?php foreach ($episodes as $episode):
+              $accents = ["&", "è"];
+              $lettre = ["&amp", "e"];
+              $showArtist = str_replace($accents, $lettre, (string) $episode['artist']);
+              $showTrack = str_replace($accents, $lettre, (string) $episode['title']);
+            ?>
+              <div class="card mb-3" style="max-width: 100%">
+                <div class="row g-0">
+                  <div class="col-md-3">
+                    <img src="../uploads/shows/<?php echo $episode['image']; ?>" class="img-fluid rounded-start" alt="..." width="200" height="200">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title"><?php echo Texter::cutText($showTrack, 30); ?></h5>
+                      <p class="card-text"><?php DateFormater::giveMetheHour($episode['date_played']); ?></p>
+                      <?php
+                      // NOTE: the previous version streamed the podcast file directly
+                      // (via songs.path + REMOTE_PODCASTS_FOLDER). GET /shows/:id
+                      // does not currently expose an audio path or "associated_artists",
+                      // so inline playback is temporarily unavailable here pending a
+                      // radiodj-api enhancement to include that data. Documented as a
+                      // known follow-up in the PR notes.
+                      ?>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-        <?php
-          }
-          $reponse->closeCursor(); // Termine le traitement de la requête
-        } else {
-          echo _("No episodes for this show.");
-        }
-        ?>
-      </div>
-      <div class="col-lg-4">
-        <h4 class="widgetTitle"><?= _('Show Informations'); ?></h4>
-        <?php
-        $reponse = $db_conx_rdj->query("SELECT " . PREFIX . "_subcategory_info.*, subcategory.* 
-FROM " . PREFIX . "_subcategory_info 
-LEFT JOIN subcategory ON subcategory.ID = " . PREFIX . "_subcategory_info.subcategory_id 
-WHERE subcategory_id = " . $id . " LIMIT 1");
-        while ($show = $reponse->fetch()) { ?>
+            <?php endforeach; ?>
+          <?php else: ?>
+            <?= _("No episodes for this show."); ?>
+          <?php endif; ?>
+        </div>
+        <div class="col-lg-4">
+          <h4 class="widgetTitle"><?= _('Show Informations'); ?></h4>
           <?php
-          // Get the day from the database
-          $day = $show['scheduleDay'];
-          $timestamp = strtotime("next $day");
-          $timestamp = strtotime('+1 week', $timestamp);
-          $next_day = date('Y-m-d', $timestamp);
-          if (!empty($show['scheduleDay'])) {
-            echo _('Next episode:') . " " . $next_day . "<br>"
-              . _("Hosted by:") . " " . $show['curator'] . "<br>"
-              . _("All") . " " . DateFormater::convertDate($show['scheduleDay'], 'l', 'french', false, false) . "s, " . $show['scheduleTime'] .
-              " " . $lang["timezone"];
-          } else {
-            echo _("No longer online.");
-          } ?>
+          // NOTE: "curator" / "scheduleDay" / "scheduleTime" are not part of
+          // GET /shows/:id yet, so the "Next episode" / "Hosted by" block is
+          // temporarily unavailable — see PR notes for the same follow-up.
+          echo _("No longer online.");
+          ?>
           <hr>
-        <?php }
-        $reponse->closeCursor(); ?>
+        </div>
       </div>
     </div>
-  </div>
-  </div>
-  </div>
-  </div>
+  <?php endif; ?>
 </section>
