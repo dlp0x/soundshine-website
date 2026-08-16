@@ -1,4 +1,4 @@
-# RewindRadio - Interface web pour RadioDJ
+# soundSHINE Radio - Interface web pour RadioDJ
 
 Ce script est conçu pour gérer le site web de votre station de radio en ligne. Il offre les fonctionnalités suivantes :
 
