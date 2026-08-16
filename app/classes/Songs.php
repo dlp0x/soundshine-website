@@ -144,7 +144,7 @@ class Songs
                 <div class="col-6">
                     <div class='song_title'><?= Texter::cutText($show_artist, 30); ?></div>
                     <div class='song_artist'><?= Texter::cutText($show_track, 40); ?></div>
-                    <div class='song_artist'><?= _("Asked by"); ?><?= Texter::cutText($username, 40); ?></div>
+                    <div class='song_artist'><?= _("Asked by"); ?> <?= Texter::cutText($username, 40); ?></div>
                     <div class='song_artist'><?= _("Asked at"); ?> : <?= $song['requested']; ?></div>
                 </div>
             </div>

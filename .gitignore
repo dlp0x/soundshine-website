@@ -1,1 +1,4 @@
-0001-feat-migrate-api-issue-1.patch
+*.patch
+node_modules/
+vendor/
+.env
